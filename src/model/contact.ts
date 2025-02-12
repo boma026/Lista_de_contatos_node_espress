@@ -25,7 +25,7 @@ let list = await getContacts();
 
      list = list.filter(item => {
         if (item.toLowerCase() !== (name).toLocaleLowerCase()) {
-            return true;
+            return true; 
         }
         else{
             return false;
