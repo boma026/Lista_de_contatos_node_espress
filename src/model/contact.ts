@@ -1,5 +1,6 @@
 import { readFile, writeFile } from "fs/promises";
 
+
 const dataSource = "./data/list.txt";
 
 export const getContacts = async () => {
