@@ -1,5 +1,6 @@
 import { RequestHandler } from "express";
 import { createContact, deleteContact, getContacts } from "../services/contact";
+import sharp from "sharp";
 
 export const getContactsController: RequestHandler = async (req, res) => {
 
@@ -23,7 +24,10 @@ export const createContactController: RequestHandler = async (req, res) => {
         return;
     }
 
-    let list = await getContacts();
+    await sharp(req.file.path)
+        .resize(300, 300, {fit: "cover"})
+        .toFile("public/avatars/" +req.file.filename+".jpeg")
+
     
     await createContact(name);
 

@@ -10,7 +10,7 @@ server.use(express.static(path.join(__dirname, "../public")));
 
 server.use("/", router)
 
-server.listen(3000, () => {
+server.listen(3001, () => {
 
     console.log("Servidor funcionando em http://localhost:3000");
 })
